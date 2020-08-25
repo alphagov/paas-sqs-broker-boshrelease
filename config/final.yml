@@ -5,4 +5,4 @@ blobstore:
   options:
     bucket_name: gds-paas-build-releases-blobs
     region: eu-west-1
-    endpoint: https://sqs.eu-west-1.amazonaws.com
+    endpoint: https://s3-eu-west-1.amazonaws.com

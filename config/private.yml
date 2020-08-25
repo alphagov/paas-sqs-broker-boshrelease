@@ -1,5 +1,5 @@
 ---
 blobstore:
-  provider: sqs
+  provider: s3
   options:
     credentials_source: env_or_profile
