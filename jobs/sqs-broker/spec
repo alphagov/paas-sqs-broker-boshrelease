@@ -24,7 +24,7 @@ properties:
   sqs-broker.aws_region:
     description: "AWS region (for example eu-west-1)"
   sqs-broker.resource_prefix:
-    description: "Prefix used for sqs buckets and IAM usernames"
+    description: "Prefix used for sqs queues and IAM usernames"
     default: "paas-sqs-broker-"
   sqs-broker.iam_user_path:
     description: "Path for the created IAM users"
