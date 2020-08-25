@@ -1,46 +1,46 @@
 ---
-name: s3-broker
+name: sqs-broker
 
 templates:
-  bin/s3-broker-ctl.erb: bin/s3-broker-ctl
-  config/s3-broker-config.json.erb: config/s3-broker-config.json
+  bin/sqs-broker-ctl.erb: bin/sqs-broker-ctl
+  config/sqs-broker-config.json.erb: config/sqs-broker-config.json
   config/locket.ca_cert.crt.erb: config/locket.ca_cert.crt
   config/locket.client_cert.crt.erb: config/locket.client_cert.crt
   config/locket.client_key.key.erb: config/locket.client_key.key
 
 packages:
-  - s3-broker
+  - sqs-broker
 
 properties:
-  s3-broker.port:
+  sqs-broker.port:
     default: 80
-  s3-broker.basic_auth_username:
+  sqs-broker.basic_auth_username:
     description: "Basic auth username"
-  s3-broker.basic_auth_password:
+  sqs-broker.basic_auth_password:
     description: "Basic auth password"
-  s3-broker.log_level:
+  sqs-broker.log_level:
     description: "Log level"
     default: "INFO"
-  s3-broker.aws_region:
+  sqs-broker.aws_region:
     description: "AWS region (for example eu-west-1)"
-  s3-broker.resource_prefix:
-    description: "Prefix used for s3 buckets and IAM usernames"
-    default: "paas-s3-broker-"
-  s3-broker.iam_user_path:
+  sqs-broker.resource_prefix:
+    description: "Prefix used for sqs buckets and IAM usernames"
+    default: "paas-sqs-broker-"
+  sqs-broker.iam_user_path:
     description: "Path for the created IAM users"
-    default: "/paas-s3-broker/"
-  s3-broker.iam_ip_restriction_policy_arn:
+    default: "/paas-sqs-broker/"
+  sqs-broker.iam_ip_restriction_policy_arn:
     description: "ARN for IP restricion policy"
-  s3-broker.deploy_environment:
+  sqs-broker.deploy_environment:
     description: "Environment this broker is deployed into"
-  s3-broker.locket.api_location:
+  sqs-broker.locket.api_location:
     description: "The host and port for the Locket server"
     example: "127.0.0.1:8891"
-  s3-broker.locket.ca_cert:
+  sqs-broker.locket.ca_cert:
     description: "A PEM formatted certificate of a CA the Locket client will trust"
-  s3-broker.locket.client_cert:
+  sqs-broker.locket.client_cert:
     description: "A PEM formatted certificate used for client connections to the Locket server"
-  s3-broker.locket.client_key:
+  sqs-broker.locket.client_key:
     description: "A PEM formatted key used for client connections to the Locket server"
-  s3-broker.catalog:
+  sqs-broker.catalog:
     description: "Broker catalog (including services and plans)"

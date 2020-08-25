@@ -1,0 +1,5 @@
+check process sqs-broker
+  with pidfile /var/vcap/sys/run/sqs-broker/sqs-broker.pid
+  start program "/var/vcap/jobs/sqs-broker/bin/sqs-broker-ctl start"
+  stop program "/var/vcap/jobs/sqs-broker/bin/sqs-broker-ctl stop"
+  group vcap

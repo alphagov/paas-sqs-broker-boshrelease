@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -e -u -o pipefail
+
+RUN_DIR=/var/vcap/sys/run/sqs-broker
+LOG_DIR=/var/vcap/sys/log/sqs-broker
+PIDFILE=/var/vcap/sys/run/sqs-broker/sqs-broker.pid
+
+case $1 in
+
+  start)
+
+    mkdir -p "$RUN_DIR" "$LOG_DIR"
+    chown -R vcap:vcap "$RUN_DIR" "$LOG_DIR"
+
+    echo "$$" > "$PIDFILE"
+
+    exec /var/vcap/packages/sqs-broker/bin/paas-sqs-broker \
+      --config=/var/vcap/jobs/sqs-broker/config/sqs-broker-config.json \
+      >>  $LOG_DIR/sqs-broker.stdout.log \
+      2>> $LOG_DIR/sqs-broker.stderr.log
+    ;;
+
+  stop)
+    kill -9 "$(< "$PIDFILE")"
+    rm -f "$PIDFILE"
+    ;;
+
+  *)
+    echo "Usage: $0 {start|stop}"
+    exit 1
+    ;;
+
+esac

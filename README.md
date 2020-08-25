@@ -1,1 +1,1 @@
-# PaaS S3 Broker Boshrelease
+# PaaS SQS Broker Boshrelease

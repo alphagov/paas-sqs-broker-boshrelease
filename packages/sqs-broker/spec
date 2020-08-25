@@ -1,0 +1,8 @@
+---
+name: sqs-broker
+
+dependencies:
+  - golang
+
+files:
+  - paas-sqs-broker/**/*
