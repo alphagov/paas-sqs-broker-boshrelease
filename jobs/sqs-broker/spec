@@ -25,12 +25,10 @@ properties:
     description: "AWS region (for example eu-west-1)"
   sqs-broker.resource_prefix:
     description: "Prefix used for sqs queues and IAM usernames"
-    default: "paas-sqs-broker-"
-  sqs-broker.iam_user_path:
-    description: "Path for the created IAM users"
-    default: "/paas-sqs-broker/"
-  sqs-broker.iam_ip_restriction_policy_arn:
-    description: "ARN for IP restricion policy"
+    default: "paas-sqs-broker"
+  sqs-broker.permissions_boundary:
+    description: "The ARN of the permissions boundary assigned to created IAM users"
+    default: ""
   sqs-broker.deploy_environment:
     description: "Environment this broker is deployed into"
   sqs-broker.locket.api_location:
