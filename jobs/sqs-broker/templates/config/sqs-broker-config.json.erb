@@ -6,9 +6,8 @@
   "aws_region": "<%= p('sqs-broker.aws_region') %>",
   "catalog": <%= JSON.dump(p('sqs-broker.catalog')) %>,
   "resource_prefix": "<%= p('sqs-broker.resource_prefix') %>",
-  "iam_user_path": "<%= p('sqs-broker.iam_user_path') %>",
-  "iam_ip_restriction_policy_arn": "<%= p('sqs-broker.iam_ip_restriction_policy_arn') %>",
   "deploy_env": "<%= p('sqs-broker.deploy_environment') %>",
+  "permissions_boundary": "<%= p('sqs-broker.permissions_boundary') %>",
 
   "locket": {
     "address": "<%= p('sqs-broker.locket.api_location') %>",
