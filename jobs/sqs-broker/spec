@@ -26,6 +26,9 @@ properties:
   sqs-broker.resource_prefix:
     description: "Prefix used for sqs queues and IAM usernames"
     default: "paas-sqs-broker"
+  sqs-broker.additional_user_policy:
+    description: "The ARN of a managed policy to attach to all created IAM users"
+    default: ""
   sqs-broker.permissions_boundary:
     description: "The ARN of the permissions boundary assigned to created IAM users"
     default: ""

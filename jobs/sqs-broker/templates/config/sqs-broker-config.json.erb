@@ -7,6 +7,7 @@
   "catalog": <%= JSON.dump(p('sqs-broker.catalog')) %>,
   "resource_prefix": "<%= p('sqs-broker.resource_prefix') %>",
   "deploy_env": "<%= p('sqs-broker.deploy_environment') %>",
+  "additional_user_policy": "<%= p('sqs-broker.additional_user_policy') %>",
   "permissions_boundary": "<%= p('sqs-broker.permissions_boundary') %>",
 
   "locket": {
