@@ -2,6 +2,7 @@
   "port": "<%= p('sqs-broker.port') %>",
   "basic_auth_username": "<%= p('sqs-broker.basic_auth_username') %>",
   "basic_auth_password": "<%= p('sqs-broker.basic_auth_password') %>",
+  "context_timeout_seconds": <%= p('sqs-broker.context_timeout_seconds') %>,
   "log_level": "<%= p('sqs-broker.log_level') %>",
   "aws_region": "<%= p('sqs-broker.aws_region') %>",
   "catalog": <%= JSON.dump(p('sqs-broker.catalog')) %>,

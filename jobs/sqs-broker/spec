@@ -21,6 +21,9 @@ properties:
   sqs-broker.log_level:
     description: "Log level"
     default: "INFO"
+  sqs-broker.context_timeout_seconds:
+    description: "Timeout in which broker requests should return"
+    default: 0
   sqs-broker.aws_region:
     description: "AWS region (for example eu-west-1)"
   sqs-broker.resource_prefix:
