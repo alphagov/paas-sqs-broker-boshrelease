@@ -1,3 +1,4 @@
 [submodule "src/paas-sqs-broker"]
 	path = src/paas-sqs-broker
 	url = https://github.com/alphagov/paas-sqs-broker
+	branch = main
