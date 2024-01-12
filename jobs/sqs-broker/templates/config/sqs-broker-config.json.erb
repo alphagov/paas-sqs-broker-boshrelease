@@ -10,7 +10,13 @@
   "deploy_env": "<%= p('sqs-broker.deploy_environment') %>",
   "additional_user_policy": "<%= p('sqs-broker.additional_user_policy') %>",
   "permissions_boundary": "<%= p('sqs-broker.permissions_boundary') %>",
-
+<% if_p('sqs-broker.tls') do |tls| -%>
+  "tls": {
+    "certificate": "<%= tls.fetch("certificate").gsub(/\n/, '\\n') %>",
+    "private_key": "<%= tls.fetch("private_key").gsub(/\n/, '\\n') %>",
+    "ca": "<%= tls.fetch("ca").gsub(/\n/, '\\n') %>"
+  },
+<% end -%>
   "locket": {
     "address": "<%= p('sqs-broker.locket.api_location') %>",
     "ca_cert_file": "/var/vcap/jobs/sqs-broker/config/locket.ca_cert.crt",
